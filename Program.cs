@@ -10,6 +10,8 @@ namespace Address_Book
 
             bool check = true;
 
+            AddressBook addobj = new AddressBook();
+
             while (check)
             {
                 Console.WriteLine("Please select the Options :\n" +
@@ -21,21 +23,19 @@ namespace Address_Book
                 switch (option)
                 {
                     case 1:
-
-                        AddressBook addobj = new AddressBook();
                         Console.WriteLine("::::::::::::::::::::::::::");
                         addobj.createContact();
                         break;
 
                     case 2:
-
-                        AddressBook addobj1 = new AddressBook();
                         Console.WriteLine("::::::::::::::::::::::::::");
-                        addobj1.createContact();
+                        addobj.createContact();
+
                         Console.WriteLine("::::::::::::::::::::::::::");
                         Console.WriteLine("Entered Details of Person given as :");
-                        addobj1.Display();
-                        addobj1.addPerson();
+                        addobj.Display();
+
+                        addobj.addPerson();
                         break;
 
 
@@ -48,5 +48,6 @@ namespace Address_Book
             }
         }
     }
+    
 
 }
