@@ -9,6 +9,8 @@ namespace Address_Book
             Console.WriteLine("Welcome to Address Book Program");
 
             bool check = true;
+            AddressBook addobj = new AddressBook();
+
 
             while (check)
             {
@@ -16,38 +18,25 @@ namespace Address_Book
                     "1)Enter Details to add Contact in List\n" +
                     "2)Add new Contact, Display and Stores contact in the list\n" +
                     "3)Edit Details of Contact\n" +
-                    "4)Remove Contact Details from the List\n");
+                    "4)Remove Contact Details from the List\n" +
+                    "5)Enter numbers for Adding Multiple Contacts\n");
 
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
                 {
                     case 1:
-
-                        AddressBook addobj = new AddressBook();
                         Console.WriteLine("::::::::::::::::::::::::::");
                         addobj.createContact();
-                        break;
-
-                    case 2:
-
-                        AddressBook addobj1 = new AddressBook();
-                        Console.WriteLine("::::::::::::::::::::::::::");
-                        addobj1.createContact();
                         Console.WriteLine("::::::::::::::::::::::::::");
                         Console.WriteLine("Entered Details of Person given as :");
-                        addobj1.Display();
-                        addobj1.addPerson();
+                        addobj.Display();
+                        addobj.addPerson();
                         break;
 
-                    case 3:
+                       case 2:
 
-                        AddressBook addobj2 = new AddressBook();
-                        Console.WriteLine("::::::::::::::::::::::::::");
-
-                        bool check1 = true;
-
-                        while (check1)
+                        while (check)
                         {
                             Console.WriteLine("Follow Steps to add details:\n" +
                                "1) To addContact\n" + "2) To Edit Contact\n" +
@@ -57,17 +46,13 @@ namespace Address_Book
                             switch (select)
                             {
                                 case 1:
-                                    addobj2.addPerson();
+                                    addobj.addPerson();
                                     Console.WriteLine(":::::::::::::::::::::::::::;");
-                                    break;
 
-                                case 2:
-                                    addobj2.EditContact();
+                                    addobj.EditContact();
                                     Console.WriteLine(":::::::::::::::::::::::::::;");
-                                    break;
 
-                                case 3:
-                                    addobj2.Display();
+                                    addobj.Display();
                                     Console.WriteLine(":::::::::::::::::::::::::::;");
                                     break;
 
@@ -81,12 +66,7 @@ namespace Address_Book
 
                     case 4:
 
-                        AddressBook addobj3 = new AddressBook();
-                        Console.WriteLine("::::::::::::::::::::::::::");
-
-                        bool check2 = true;
-
-                        while (check2)
+                        while (check)
                         {
                             Console.WriteLine("Follow Steps to add details:\n" +
                                "1) To addContact\n" + "2) To Edit Contact\n" +
@@ -96,25 +76,26 @@ namespace Address_Book
                             switch (select)
                             {
                                 case 1:
-                                    addobj3.addPerson();
+                                    addobj.addPerson();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                               
+
+                                    addobj.EditContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                 
+                                    addobj.DeleteContact();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+
+
+                                
+                                    addobj.Display();
+                                    Console.WriteLine(":::::::::::::::::::::::::::;");
+                                  
+
+                              
+                                    addobj.AddMultipleContact();
                                     Console.WriteLine(":::::::::::::::::::::::::::;");
                                     break;
-
-                                case 2:
-                                    addobj3.EditContact();
-                                    Console.WriteLine(":::::::::::::::::::::::::::;");
-                                    break;
-
-                                case 3:
-                                    addobj3.DeleteContact();
-                                    Console.WriteLine(":::::::::::::::::::::::::::;");
-                                    break;
-
-                                case 4:
-                                    addobj3.Display();
-                                    Console.WriteLine(":::::::::::::::::::::::::::;");
-                                    break;
-
 
                                 default:
 
@@ -123,6 +104,9 @@ namespace Address_Book
                             }
                         }
                         break;
+
+
+                      
 
                     default:
                         Console.WriteLine("Please select proper option");
