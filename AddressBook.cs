@@ -41,7 +41,7 @@ namespace Address_Book
             Console.WriteLine("8)Enter Email-Id");
             contact.Email = Console.ReadLine();
 
-            //created addressBook list use to store 
+            //created addressBook list use to store contacts 
             addressBook.Add(contact);
 
         }
@@ -147,6 +147,7 @@ namespace Address_Book
                             break;
 
                         default:
+
                             Console.WriteLine("Please Enter proper option");
                             break;
 
@@ -173,6 +174,7 @@ namespace Address_Book
             }
             Console.WriteLine("Contact not Found ");
         }
+
         public void AddMultipleContact()
         {
             Console.WriteLine("Enter Number of contact to Add");
@@ -184,7 +186,7 @@ namespace Address_Book
             {
 
                 addPerson();
-                Console.WriteLine(":::::::::::::::::::::::::::;");
+                Console.WriteLine("::::::::::::::::::::::::::::");
                 Number--;
             }
         }
@@ -206,9 +208,3 @@ namespace Address_Book
         }
     }
 }
-
-
-
-
-
-
